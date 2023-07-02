@@ -1,4 +1,5 @@
 variables:
+  buildConfiguration: 'Release'
   Major: '2'
   Minor: '0'
   Patch: '0'
