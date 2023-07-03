@@ -9,17 +9,9 @@
     <Product>Red Mist</Product>
     <Description>Unit test and DI helpers.</Description>
     <Copyright>2023</Copyright>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://dev.azure.com/bigmission/RedMist/_git/TestHelpers</RepositoryUrl>
     <IncludeSymbols>True</IncludeSymbols>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
 </Project>
