@@ -25,6 +25,6 @@ jobs:
       - name: Build
         run: dotnet build BigMission.TestHelpers/BigMission.TestHelpers.csproj --no-restore --configuration Release
       - name: Create the package
-        run: dotnet pack BigMission.TestHelpers/JeBigMission.TestHelpers.csproj --configuration Release
+        run: dotnet pack BigMission.TestHelpers/BigMission.TestHelpers.csproj --configuration Release
       - name: Publish the package to Nuget
         run: dotnet nuget push BigMission.TestHelpers\bin\Release\*.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_TOKEN}} --skip-duplicate
