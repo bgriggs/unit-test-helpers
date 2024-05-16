@@ -1,13 +1,10 @@
-﻿using System;
+﻿namespace BigMission.TestHelpers;
 
-namespace BigMission.TestHelpers
+/// <summary>
+/// DateTime mockable interface to enable unit testing.
+/// </summary>
+public interface IDateTimeHelper
 {
-    /// <summary>
-    /// DateTime mockable interface to enable unit testing.
-    /// </summary>
-    public interface IDateTimeHelper
-    {
-        DateTime Now { get; }
-        DateTime UtcNow { get; }
-    }
+    DateTime Now { get; }
+    DateTime UtcNow { get; }
 }
