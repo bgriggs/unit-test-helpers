@@ -1,27 +1,22 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
+﻿namespace BigMission.TestHelpers;
 
-namespace BigMission.TestHelpers
+public class TimerHelper : ITimerHelper
 {
-    public class TimerHelper : ITimerHelper
+    private Timer? timer;
+
+    public Timer Create(TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period)
     {
-        private Timer timer;
+        timer = new Timer(callback, state, dueTime, period);
+        return timer;
+    }
 
-        public Timer Create(TimerCallback callback, object state, TimeSpan dueTime, TimeSpan period)
-        {
-            timer = new Timer(callback, state, dueTime, period);
-            return timer;
-        }
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
 
-        public void Dispose()
-        {
-            timer.Dispose();
-        }
-
-        public ValueTask DisposeAsync()
-        {
-            return timer.DisposeAsync();
-        }
+    public ValueTask DisposeAsync()
+    {
+        return timer?.DisposeAsync() ?? ValueTask.CompletedTask;
     }
 }
