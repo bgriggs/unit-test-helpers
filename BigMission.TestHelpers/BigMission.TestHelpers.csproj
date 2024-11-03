@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<Title>Unit Test Helpers</Title>
-		<Version>3.0.1.0</Version>
+		<Version>3.0.1.1</Version>
 		<Authors>Brian Griggs</Authors>
 		<Company>Big Mission Motorsports, LLC</Company>
 		<Product>Red Mist</Product>
