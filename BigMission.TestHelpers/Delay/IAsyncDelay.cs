@@ -2,5 +2,5 @@
 
 public interface IAsyncDelay
 {
-    public Task Delay(TimeSpan delay, CancellationToken stoppingToken);
+    public Task Delay(TimeSpan delay, CancellationToken stoppingToken = default);
 }
