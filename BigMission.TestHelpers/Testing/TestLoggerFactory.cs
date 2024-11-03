@@ -4,17 +4,14 @@ namespace BigMission.TestHelpers.Testing;
 
 public class TestLoggerFactory : ILoggerFactory
 {
-    public void AddProvider(ILoggerProvider provider)
-    {
+    public DebugLogger Logger { get; set; } = new DebugLogger();
 
-    }
+    public void AddProvider(ILoggerProvider provider) { }
 
     public ILogger CreateLogger(string categoryName)
     {
-        return new DebugLogger();
+        return Logger;
     }
 
-    public void Dispose()
-    {
-    }
+    public void Dispose() { }
 }

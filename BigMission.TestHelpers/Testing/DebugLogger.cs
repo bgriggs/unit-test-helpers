@@ -1,9 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
+using System.Collections.ObjectModel;
 
 namespace BigMission.TestHelpers.Testing;
 
 public class DebugLogger : ILogger
 {
+    public List<string> LogMessages { get; private set; } = [];
+
     public bool IsTraceEnabled => true;
 
     public bool IsDebugEnabled => true;
@@ -28,11 +31,13 @@ public class DebugLogger : ILogger
 
     public void Debug(string message)
     {
+        LogMessages.Add(message);
         System.Diagnostics.Debug.WriteLine(message);
     }
 
     public void Debug(Func<string> messageFactory)
     {
+        LogMessages.Add(messageFactory.Invoke());
         System.Diagnostics.Debug.WriteLine(messageFactory.Invoke());
     }
 
@@ -68,7 +73,7 @@ public class DebugLogger : ILogger
 
     public void Error(Func<string> messageFactory)
     {
-        Debug(messageFactory);
+        Debug(messageFactory.Invoke());
     }
 
     public void Error(string message, Exception exception)
@@ -78,11 +83,13 @@ public class DebugLogger : ILogger
 
     public void ErrorFormat(string format, params object[] args)
     {
+        LogMessages.Add(string.Format(format, args));
         System.Diagnostics.Debug.WriteLine(string.Format(format, args));
     }
 
     public void ErrorFormat(Exception exception, string format, params object[] args)
     {
+        LogMessages.Add($"{string.Format(format, args)} {exception}");
         System.Diagnostics.Debug.WriteLine($"{string.Format(format, args)} {exception}");
     }
 
@@ -173,6 +180,7 @@ public class DebugLogger : ILogger
 
     public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
     {
+        LogMessages.Add(formatter(state, exception));
         System.Diagnostics.Debug.WriteLine(formatter(state, exception));
     }
 
