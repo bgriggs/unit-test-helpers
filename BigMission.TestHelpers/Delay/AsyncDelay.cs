@@ -8,8 +8,8 @@ namespace BigMission.TestHelpers.Delay;
 
 public class AsyncDelay : IAsyncDelay
 {
-    public Task Delay(TimeSpan delay)
+    public Task Delay(TimeSpan delay, CancellationToken stoppingToken = default)
     {
-        return Task.Delay(delay);
+        return Task.Delay(delay, stoppingToken);
     }
 }

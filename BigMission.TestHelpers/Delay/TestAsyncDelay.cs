@@ -2,7 +2,7 @@
 
 public class TestAsyncDelay : IAsyncDelay
 {
-    public virtual Task Delay(TimeSpan delay)
+    public virtual Task Delay(TimeSpan delay, CancellationToken stoppingToken = default)
     {
         return Task.CompletedTask;
     }
