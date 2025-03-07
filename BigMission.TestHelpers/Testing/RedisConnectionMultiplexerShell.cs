@@ -1,4 +1,6 @@
-﻿using StackExchange.Redis;
+﻿#pragma warning disable CS0067
+
+using StackExchange.Redis;
 using StackExchange.Redis.Maintenance;
 using StackExchange.Redis.Profiling;
 using StackRedis.L1;
