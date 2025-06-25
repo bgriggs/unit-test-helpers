@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
 		<Title>Unit Test Helpers</Title>
-		<Version>3.0.6.1</Version>
+		<Version>3.0.7</Version>
 		<Authors>Brian Griggs</Authors>
 		<Company>Big Mission Motorsports, LLC</Company>
 		<Product>Red Mist</Product>
@@ -29,10 +29,7 @@
 		<PackageReference Include="Microsoft.Extensions.Caching.Hybrid" Version="9.0.0-preview.7.24406.2" />
 		<PackageReference Include="Microsoft.AspNetCore.SignalR.StackExchangeRedis" Version="9.0.0" />
 		<PackageReference Include="RedLock.net" Version="2.3.2" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\..\StackRedis.L1\StackRedis.L1\StackRedis.L1.csproj" />
+		<PackageReference Include="BigMission.StackRedis.L1" Version="0.5.0" />
 	</ItemGroup>
 
 </Project>
